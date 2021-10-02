@@ -1,0 +1,130 @@
+Question_1:
+
+I am using simple OPP code for describe circle and rectangle.This code finds area of circle and area of rectangle.
+
+#include<iostream>
+using namespace std;
+
+class tamim{
+    public:
+    void circle(int r){
+        cout<<"Area of circle is "<<3.1416*r*r<<endl;
+    }
+    void rectangle(int h, int w){
+        cout<<"Area of rectangle is "<<h*w<<endl;
+    }
+
+};
+
+int main(){
+    tamim obj;
+    obj.circle(4);
+    obj.rectangle(2,3);
+}
+
+In object oriented programming we need class and object. Here tamim is class name. tamim class given two function which is circle and rectangle. When a class is defined, no memory is allocated but when create object then memory is allocated. So when we create object of this tamim class then we use all variable and function of this class. Using this object we call circle and rectangle function in tamim class.
+
+Run time polymorphism: 
+this polymorphism is called dynamic polymorphism.Run time polymorphism is achieved when the object's method is invoked at the run time instead of compile time. It is achieved by method overriding.
+
+#include <iostream>    
+using namespace std;    
+class Shape {                                         
+public:    
+virtual void show(){                            
+cout<<"This is Shape class"<<endl;      
+    }        
+};     
+class Rectangle: public Shape                  
+{      
+ public:    
+ void show()      
+   {      
+       cout<<"This is Rectangle class"<<endl;      
+    }      
+};    
+class Circle: public Shape                       
+  
+{      
+ public:    
+ void show()      
+   {      
+      cout<<"This is circle class"<<endl;      
+   }      
+};    
+int main(void) {    
+    Shape *ptr;                                
+    Shape obj;                                 
+    Rectangle obj1;    
+    Circle obj2;    
+    ptr=&obj;    
+    ptr->show();     
+    ptr=&obj1;    
+    ptr->show();      
+    ptr=&obj2;    
+    ptr->show();     
+}  
+
+This is example of runtime polymorphism.
+
+
+
+
+
+
+
+
+
+
+
+
+Question_2:
+
+Stack memory:
+This is the temporary memory where variable values are stored when their methods are invoked. After the method is finished, the memory containing those values is cleared to make room for new methods.Any values in this block are only accessible by the current method and will not exist once it ends.When the method ends, that block will be erased. The next method invoked will use that empty block.This “last in, first out” method makes it easy to find the values needed and allows fast access to those values.
+
+Heap memory:
+It dynamically handles the memory blocks. It means, we need not to handle the memory manually.The memory is used as long as the application is running.When an object is created, it is always created in Heap and has global access. That means all objects can be referenced from anywhere in the application.It does not follow any order like the stack.
+
+Which is better for large array:
+For very large memory i will choice heap memory allocation. Stack Memory is allocated in a contiguous block. This type of long contiguous block is impossible that's why I allocated heap memory for my array.
+
+
+
+
+
+
+
+
+
+
+
+
+Question_3:
+
+If every row or every column has pattern type value, then improve is possible. Without pattern this two loops are necessary.
+
+
+
+
+
+
+
+
+
+
+
+
+Question_4:
+
+Count value is wrong. If use count++ then one node count multiple time.
+
+int traverse(Node* node){
+    if (node == NULL) return 0; 
+    count=1;
+    count += traverse (node->left) 
+    count += traverse (node->right) 
+    return count;
+}
+
+This is right way to count all node. In recursion function we simple thinking this is my first step after every call.
